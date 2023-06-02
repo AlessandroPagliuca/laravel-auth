@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container-fluid">
-        <h2 class="fs-4 text-secondary my-4">
+        <h2 class="fs-4 text-secondary my-4 p-2">
             {{ __('Dashboard') }}
         </h2>
     </div>

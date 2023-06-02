@@ -1,0 +1,86 @@
+$blue-dark: #111f44;
+$blue: #414e67;
+$blue-title: #c4d0ec;
+$white: #FFFFFF;
+$bg-light: #f8f9fa;
+$blue-light-01: #00d1a9;
+
+nav {
+    position: relative;
+    width: 100%;
+    height: 80px;
+}
+
+.bg-nav {
+
+    .nav-link {
+        color: $white;
+
+        &:hover {
+            color: $blue-light-01;
+        }
+    }
+
+}
+
+.bg-blue-dark {
+    background-color: $blue-dark;
+}
+
+.blue-01 {
+    color: $blue;
+}
+
+.title-color {
+    color: $blue-title;
+}
+
+.blue-ligth-01 {
+    color: $blue-light-01;
+}
+
+.content-vh100 {
+    height: 100vh;
+    overflow-y: auto;
+    background-color: $blue-dark;
+}
+
+.bg-badge {
+    transition: 0.7s !important;
+
+    a {
+        font-weight: bold !important;
+        color: $blue !important;
+
+        &:hover {
+            color: $white !important;
+
+        }
+    }
+}
+
+.dropdown-menu {
+    --bs-dropdown-bg: none !important;
+    --bs-dropdown-link-color: $blue-dark !important;
+    --bs-dropdown-link-hover-color: $white !important;
+    --bs-dropdown-link-hover-bg: none !important;
+    --bs-dropdown-link-active-color: #FFFFFF !important;
+    --bs-dropdown-link-active-bg: #ffffff !important;
+    --bs-dropdown-link-disabled-color: $blue-light-01 !important;
+    padding: 0 !important;
+
+    a {
+        background-color: $white !important;
+        font-weight: bold !important;
+        color: $blue-dark !important;
+        transition: 0.7s !important;
+
+        &:hover {
+            color: $white !important;
+            background-color: $blue-dark !important;
+            box-shadow: 0px 0px 7px 1.5px rgb(190, 189, 189) !important;
+
+        }
+    }
+
+}
