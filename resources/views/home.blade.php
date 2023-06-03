@@ -38,6 +38,10 @@
                             <p class="fs-5 title-color">Title project</p>
                         </div>
                     </div>
+                    <a href="{{ route('projects.create') }}"
+                        class="btn btn-primary w-50 mx-2 my-4 text-uppercase fw-semibold text-center"
+                        style="height: 200px;">Create
+                        new project</a>
                 </div>
             </div>
         </section>
