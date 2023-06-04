@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container pt-5">
+    <div class="container">
 
         <h1 class="title-color">Alessandro Pagliuca</h1>
         <small class="fw-semibold blue-ligth-01">Full Stack Web Developer</small>
@@ -45,6 +45,26 @@
                 </div>
             </div>
         </section>
+        <!--social links-->
+        <ul class="link-ul d-flex align-items-center justify-content-start">
+            <li>
+                <a href="https://www.instagram.com/alessandro.ap__">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+
+            <li class="mx-3">
+                <a href="https://www.linkedin.com/in/alessandro-pagliuca-933a801b3">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </li>
+
+            <li>
+                <a href="https://github.com/AlessandroPagliuca">
+                    <i class="fa-brands fa-square-github"></i>
+                </a>
+            </li>
+        </ul>
 
     </div>
 @endsection
