@@ -59,13 +59,15 @@ nav {
 }
 
 .dropdown-menu {
-    --bs-dropdown-bg: $blue !important;
+    --bs-dropdown-bg: none !important;
     --bs-dropdown-link-color: $blue-dark !important;
     --bs-dropdown-link-hover-color: $white !important;
     --bs-dropdown-link-hover-bg: $white !important;
     --bs-dropdown-link-active-color: #FFFFFF !important;
     --bs-dropdown-link-active-bg: #ffffff !important;
     --bs-dropdown-link-disabled-color: $blue-light-01 !important;
+    --bs-dropdown-min-width: fit-content !important;
+    border: none !important;
     padding: 0 !important;
 
     a {
@@ -90,7 +92,7 @@ nav {
     a {
         background-color: $blue-dark !important;
         font-weight: bold !important;
-        color: $blue !important;
+        color: $blue-light-01 !important;
         transition: 0.7s !important;
 
         &:hover {
@@ -124,5 +126,24 @@ ul {
                 font-size: 60px;
             }
         }
+    }
+}
+
+.fit-content {
+    width: fit-content !important;
+}
+
+.navbar-toggler {
+    color: $blue !important;
+    border: none !important;
+
+    .fa-bars {
+        color: $white;
+        font-size: 24px;
+    }
+
+    &:hover {
+        color: $white !important;
+
     }
 }

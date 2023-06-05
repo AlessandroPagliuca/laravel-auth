@@ -37,7 +37,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="fa-solid fa-bars"></i>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -53,27 +53,29 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item  bg-badge rounded-3 me-1">
-                                <a class="nav-link rounded-3 p-1" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link rounded-3 p-1  fit-content"
+                                    href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item bg-badge rounded-3 ms-1">
-                                    <a class="nav-link rounded-3 p-1"
+                                    <a class="nav-link rounded-3 p-1  fit-content"
                                         href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown bg-badge rounded-3 m-1">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle rounded-3 p-1" href="#"
-                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle rounded-3 p-1  fit-content"
+                                    href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item rounded-3 my-1"
-                                        href="{{ url('/admin') }}">{{ __('Dashboard') }}</a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"
+                                    style="width: 120px;">
+                                    <a class="dropdown-item rounded-3 my-1 fit-content"
+                                        href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
                                     {{-- <a class="dropdown-item rounded-3 my-1" href="{{ url('profile') }}">{{__('Profile')}}</a> --}}
-                                    <a class="dropdown-item rounded-3  my-1" href="{{ route('logout') }}"
+                                    <a class="dropdown-item rounded-3  my-1  fit-content" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
