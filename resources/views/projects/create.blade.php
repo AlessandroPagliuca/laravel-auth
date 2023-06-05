@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="container">
+    <section class="container padding-home">
         <h1 class="blue-01">Insert new project</h1>
-        <form action="{{ route('projects.store') }}" method="POST">
+        <form action="{{ route('admin.projects.store') }}" method="POST">
             @csrf
 
             <div class="mb-3">
@@ -50,18 +50,6 @@
 
                 </textarea>
                 @error('url')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
-            <div class="mb-3">
-                <label for="tools" class="form-label blue-01 fw-bold">Tools</label>
-                <input type="tools" class="form-control @error('tools') is-invalid
-                @enderror"
-                    name="tools" id="tools" aria-describedby="toolsProject" value=" {{ old('tools') }} ">
-                @error('tools')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>

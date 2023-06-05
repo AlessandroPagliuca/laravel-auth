@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Project;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 class ProjectSeeder extends Seeder
 {
@@ -19,7 +20,8 @@ class ProjectSeeder extends Seeder
         $projects = config('db.projects');
         foreach ($projects as $project) {
             $newProject = new Project();
-            $newProject->title = $project['title'];
+            $newProject->title = Str::slug($project['title'], '-');
+            ;
             $newProject->agency = $project['agency'];
             $newProject->year = $project['year'];
             $newProject->url = $project['url'];
