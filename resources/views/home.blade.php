@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container padding-home">
 
         <h1 class="title-color">Alessandro Pagliuca</h1>
         <small class="fw-semibold blue-ligth-01">Full Stack Web Developer</small>
@@ -10,7 +10,7 @@
                 Welcome to my Portfolio
             </h2>
 
-            <div class="d-flex flex-column justify-content-center align-items-center pt-2">
+            <div class="d-flex flex-column justify-content-center align-items-center padding-projects">
                 <h3 class="py-3 blue-ligth-01 text-uppercase">Projects</h3>
 
                 <div class="row">
@@ -38,33 +38,9 @@
                             <p class="fs-5 title-color">Title project</p>
                         </div>
                     </div>
-                    <a href="{{ route('projects.create') }}"
-                        class="btn btn-primary w-50 mx-2 my-4 text-uppercase fw-semibold text-center"
-                        style="height: 200px;">Create
-                        new project</a>
                 </div>
             </div>
         </section>
-        <!--social links-->
-        <ul class="link-ul d-flex align-items-center justify-content-start">
-            <li>
-                <a href="https://www.instagram.com/alessandro.ap__">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-            </li>
-
-            <li class="mx-3">
-                <a href="https://www.linkedin.com/in/alessandro-pagliuca-933a801b3">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="https://github.com/AlessandroPagliuca">
-                    <i class="fa-brands fa-square-github"></i>
-                </a>
-            </li>
-        </ul>
 
     </div>
 @endsection
