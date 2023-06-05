@@ -16,16 +16,16 @@ class ProjectSeeder extends Seeder
      */
     public function run()
     {
-        $projects = Project::all();
+        $projects = config('db.projects');
         foreach ($projects as $project) {
             $newProject = new Project();
             $newProject->title = $project['title'];
             $newProject->agency = $project['agency'];
             $newProject->year = $project['year'];
             $newProject->url = $project['url'];
-            $newProject->tools = $project['tools'];
             $newProject->save();
         }
+        ;
 
 
     }

@@ -18,7 +18,6 @@ return new class extends Migration {
             $table->string('agency', 100);
             $table->year('year');
             $table->text('url');
-            $table->json('tools');
             $table->timestamps();
         });
     }
