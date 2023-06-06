@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 
@@ -19,7 +20,7 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-        return view('projects.index', compact('projects'));
+        return view('admin.projects.index', compact('projects'));
     }
 
     /**
@@ -29,20 +30,22 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('projects.create');
+        return view('admin.projects.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreProjectRequest  $request
      *
      */
     public function store(StoreProjectRequest $request)
     {
         $form_data = $request->validated();
+        $slug = Str::slug($request->title, '-');
+        $form_data['slug'] = $slug;
         $newProject = Project::create($form_data);
-        return redirect()->route('projects.show', $newProject->id);
+        return redirect()->route('admin.projects.index', $newProject->slug);
     }
 
     /**
@@ -53,7 +56,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('projects.show', compact('project'));
+        return view('admin.projects.show', compact('project'));
     }
 
     /**
@@ -64,13 +67,13 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('projects.edit', compact('project'));
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\UpdateProjectRequest
      * @param  \App\Models\Project  $project
      *
      */
@@ -78,7 +81,8 @@ class ProjectController extends Controller
     {
         $form_data = $request->validated();
         $project->update($form_data);
-        return view('projects.show', compact('project', $project->id));
+        $projects = Project::all();
+        return view('admin.dashboard', compact('projects'));
     }
 
     /**
@@ -90,6 +94,6 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return redirect()->route('projects.index');
+        return redirect()->route('admin.dashboard');
     }
 }

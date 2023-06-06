@@ -20,8 +20,8 @@ class ProjectSeeder extends Seeder
         $projects = config('db.projects');
         foreach ($projects as $project) {
             $newProject = new Project();
-            $newProject->title = Str::slug($project['title'], '-');
-            ;
+            $newProject->title = $project['title'];
+            $newProject->slug = Str::slug('title', '-');
             $newProject->agency = $project['agency'];
             $newProject->year = $project['year'];
             $newProject->url = $project['url'];

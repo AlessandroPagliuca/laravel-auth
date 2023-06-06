@@ -2,10 +2,10 @@
 
 @section('content')
     <section class="container padding-home">
-        <h1 class="blue-01">Edit project</h1>
-        <form action="{{ route('admin.projects.update') }}" method="POST">
+        <h1 class="blue-01">Edit project: {{ $project->name }} </h1>
+        <form action="{{ route('admin.projects.update', $project->slug) }}" method="POST">
             @csrf
-
+            @method('PUT')
             <div class="mb-3">
                 <label for="title" class="form-label blue-01 fw-bold">Title</label>
                 <input type="text" class="form-control @error('title') is-invalid
