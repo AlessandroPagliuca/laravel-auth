@@ -44,7 +44,7 @@
 
             <div class="mb-3">
                 <label for="url" class="form-label blue-01 fw-bold">Url</label>
-                <textarea name="thumb" id="url" class="@error('thumb') is-invalid
+                <textarea name="url" id="url" class="@error('url') is-invalid
                 @enderror" cols="30"
                     rows="10" aria-describedby="urlProject">
 
